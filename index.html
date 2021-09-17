@@ -4,52 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lamp</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <meta http-equiv="refresh" content="2.2;/main/main.html"></meta>
+    <title>VueLamp</title>
+    <link rel="stylesheet" href="/main/style.css">
 </head>
 <body>
-    <div class="hero">
-        <nav>
-            <img src="/images/menu.png" class="menu-img">
-            <img src="/images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Latest</a></li>
-                <li><a href="#">Modern</a></li>
-                <li><a href="#">Contemporary</a></li>
-                <li><a href="#">Affordable</a></li>
-            </ul>
-            <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
-        </nav>
-        <div class="lamp-container">
-            <img src="/images/lamp.png" class="lamp">
-            <img src="/images/light.png" class="light" id="light">
-        </div>
 
-        <div class="text-container">
-            <h1>Lastest<br> in lighting</h1>
-            <p>This is first lamp from our company. we're making a huge collection of modern lamps in all categories form home use to office use.
+    <div class="skill">
 
-            </p>
-            <a href="">Check all collections</a>
-            <div class="control">
-                <p>04</p>
-                <div class="line"><span></span></div>
-                <p>05</p>
+        <div class="outer">
+            <div class="inner">
+                <div onload="redirect()" class="porcentagem" id="number">
+                    0%
+                </div>
             </div>
         </div>
-        <div class="foot">
-            
-        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px">
+            <defs>
+               <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="green" />
+                  <stop offset="100%" stop-color="#00986f" />
+               </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="89" stroke-linecap="round" />
+    </svg>
+
     </div>
 
-    <script>
-        var btn = document.getElementById("btn");
-        var light = document.getElementById("light");
 
-        function toggleBtn(){
-            btn.classList.toggle("active")
-            light.classList.toggle("on")
+    <script>
+
+        let number = document.getElementById("number");
+        let counter = 0;
+        setInterval(() => {
+            if(counter == 100){
+                clearInterval();
+            }else{
+                counter += 1;
+                number.innerHTML = counter + "%";
+            }
+        
+    },20)
+
+        function redirect(){
+            if(porcentagem == 65)
+               onload = window.location.href = "/index/index.html";
+
         }
+        
 
     </script>
 
